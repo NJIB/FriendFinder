@@ -1,13 +1,13 @@
 module.exports = {
   host: 'localhost',
 
-  // Your port; if not 3306
-  port: 3306,
+  // Your port; if not 8080
+  port: 8080,
 
   // Your username
   user: 'root',
 
   // Your password
   password: process.env.PASSWORD,
-  database: 'bamazon_db',
+  database: 'XXXX_db',
 };
