@@ -5,12 +5,20 @@
 // But you could have it be an empty array as well.
 // ============================================================================
 
-const tableArray = [
+const friendDetails = [
   {
-    customerName: 'Ahmed',
-    customerEmail: 'ahmed@example.com',
-    customerID: 'afhaque89',
-    phoneNumber: '000-000-0000',
+    your_name: 'Adam',
+    photo_link: '',
+    q1: '0',
+    q2: '0',
+    q3: '0',
+    q4: '0',
+    q5: '0',
+    q6: '0',
+    q7: '0',
+    q8: '0',
+    q9: '0',
+    q10: '0',
   },
 ];
 
@@ -19,4 +27,4 @@ const tableArray = [
  * Note how we export the array.
  * This makes it accessible to other files using require.
  */
-module.exports = tableArray;
+module.exports = friendDetails;
