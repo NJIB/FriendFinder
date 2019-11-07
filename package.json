@@ -1,34 +1,17 @@
 {
-  "name": "friendfinder",
-  "version": "1.0.0",
-  "description": "Bootcamp homework exercise - dating app",
+  "name": "hotrestaurant",
+  "version": "1.0.1",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js",
-    "watch": "nodemon server.js",
-    "build-docs": "jsdoc -c .jsdoc.json --readme README.md",
-    "lint": "eslint server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon \"heroku local\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NJIB/FriendFinder.git"
-  },
-  "keywords": [
-    "bootcamp",
-    "homework",
-    "node",
-    "express"
-  ],
-  "author": "NJIB",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NJIB/FriendFinder/issues"
-  },
-  "homepage": "https://github.com/NJIB/FriendFinder#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0"
+    "express": "^4.16.3"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
