@@ -30,8 +30,8 @@ app.use(express.json());
 // Whose argument is app?
 // ============================================================================
 
-require('./server/routes/apiRoutes')(app);
-require('./server/routes/htmlRoutes')(app);
+require('./app/routing/apiRoutes')(app);
+require('./app/routing/htmlRoutes')(app);
 
 // =============================================================================
 // LISTENER

@@ -8,7 +8,7 @@
 const friendDetails = [
   {
     your_name: 'Adam',
-    photo_link: '',
+    photo_link: '#',
     q1: '0',
     q2: '0',
     q3: '0',

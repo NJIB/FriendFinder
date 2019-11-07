@@ -27,6 +27,6 @@ module.exports = (app) => {
       default: fileName = 'home';
     }
 
-    res.sendFile(path.join(__dirname, `../../client/${fileName}.html`));
+    res.sendFile(path.join(__dirname, `/../public/${fileName}.html`));
   });
 };

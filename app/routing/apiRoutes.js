@@ -5,8 +5,8 @@
 // table-data, waitinglist, etc.
 // =============================================================================
 
-const tableData = require('../data/tableData');
-const waitListData = require('../data/waitinglistData');
+const friendDetails = require('../data/friends');
+// const waitListData = require('../data/waitinglistData');
 
 
 // =============================================================================
@@ -21,13 +21,13 @@ module.exports = (app) => {
   // JSON of the data in the table)
   // ---------------------------------------------------------------------------
 
-  app.get('/api/tables', (req, res) => {
-    res.json(tableData);
+  app.get('/api/friends', (req, res) => {
+    res.json(friendDetails);
   });
 
-  app.get('/api/waitlist', (req, res) => {
-    res.json(waitListData);
-  });
+  // app.get('/api/waitlist', (req, res) => {
+  //   res.json(waitListData);
+  // });
 
   // API POST Requests
   // Below code handles when a user submits
@@ -39,18 +39,19 @@ module.exports = (app) => {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
-  app.post('/api/tables', (req, res) => {
+  app.post('/api/friends', (req, res) => {
     // Note the code here. Our "server" will respond to
     // requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body parsing middleware
-    if (tableData.length < 5) {
-      tableData.push(req.body);
-      res.json(true);
-    } else {
-      waitListData.push(req.body);
-      res.json(false);
-    }
+    // if (friendDetails.length < 5) {
+    debugger;
+    friendDetails.push(req.body);
+    res.json(true);
+    // } else {
+    //   waitListData.push(req.body);
+    //   res.json(false);
+    // }
   });
 
   // ---------------------------------------------------------------------------
@@ -59,8 +60,8 @@ module.exports = (app) => {
 
   app.post('/api/clear', (req, res) => {
     // Empty out the arrays of data
-    tableData.length = 0;
-    waitListData.length = 0;
+    friendDetails.length = 0;
+    // waitListData.length = 0;
 
     res.json({ok: true});
   });
