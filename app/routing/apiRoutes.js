@@ -61,7 +61,6 @@ module.exports = (app) => {
   app.post('/api/clear', (req, res) => {
     // Empty out the arrays of data
     friendDetails.length = 0;
-    // waitListData.length = 0;
 
     res.json({ok: true});
   });
