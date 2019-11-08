@@ -64,7 +64,7 @@ module.exports = (app) => {
     inputArray.push(req.body.q10);
 
     // Variables to hold score and name of best match
-    let bestScore = 0;
+    let bestScore = 51;
     let bestMatch = '';
 
     // Array to hold each saved record being compared
@@ -91,11 +91,14 @@ module.exports = (app) => {
         scoreDiff = (scoreDiff + (Math.abs(inputArray[j] - compareArray[j])));
       }
 
+      console.log('===================================================');
+      console.log('BEFORE Best match: ', bestMatch, '(scoreDiff: ', scoreDiff, ')');
+
       if (scoreDiff < bestScore) {
         bestScore = scoreDiff;
         bestMatch = compareArray[0];
         console.log('===================================================');
-        console.log('Best match: ', bestMatch, '(scoreDiff: ', scoreDiff, ')');
+        console.log('AFTER Best match: ', bestMatch, '(scoreDiff: ', bestScore, ')');
       }
     }
 
