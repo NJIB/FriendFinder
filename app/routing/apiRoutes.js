@@ -44,14 +44,62 @@ module.exports = (app) => {
     // requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body parsing middleware
-    // if (friendDetails.length < 5) {
-    debugger;
     friendDetails.push(req.body);
+
+    // Array for most recent record being saved
+    const inputArray = [];
+
+    inputArray.length = 0;
+    inputArray.push(req.body.your_name);
+    inputArray.push(req.body.photo_link);
+    inputArray.push(req.body.q1);
+    inputArray.push(req.body.q2);
+    inputArray.push(req.body.q3);
+    inputArray.push(req.body.q4);
+    inputArray.push(req.body.q5);
+    inputArray.push(req.body.q6);
+    inputArray.push(req.body.q7);
+    inputArray.push(req.body.q8);
+    inputArray.push(req.body.q9);
+    inputArray.push(req.body.q10);
+
+    // Variables to hold score and name of best match
+    let bestScore = 0;
+    let bestMatch = '';
+
+    // Array to hold each saved record being compared
+    const compareArray = [];
+
+    for (let i = 0; i < friendDetails.length -1; i++) {
+      compareArray.length = 0;
+      compareArray.push(friendDetails[i].your_name);
+      compareArray.push(friendDetails[i].photo_link);
+      compareArray.push(friendDetails[i].q1);
+      compareArray.push(friendDetails[i].q2);
+      compareArray.push(friendDetails[i].q3);
+      compareArray.push(friendDetails[i].q4);
+      compareArray.push(friendDetails[i].q5);
+      compareArray.push(friendDetails[i].q6);
+      compareArray.push(friendDetails[i].q7);
+      compareArray.push(friendDetails[i].q8);
+      compareArray.push(friendDetails[i].q9);
+      compareArray.push(friendDetails[i].q10);
+
+
+      let scoreDiff = 0;
+      for (let j = 2; j < compareArray.length; j++) {
+        scoreDiff = (scoreDiff + (Math.abs(inputArray[j] - compareArray[j])));
+      }
+
+      if (scoreDiff < bestScore) {
+        bestScore = scoreDiff;
+        bestMatch = compareArray[0];
+        console.log('===================================================');
+        console.log('Best match: ', bestMatch, '(scoreDiff: ', scoreDiff, ')');
+      }
+    }
+
     res.json(true);
-    // } else {
-    //   waitListData.push(req.body);
-    //   res.json(false);
-    // }
   });
 
   // ---------------------------------------------------------------------------
