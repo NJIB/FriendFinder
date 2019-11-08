@@ -91,9 +91,6 @@ module.exports = (app) => {
         scoreDiff = (scoreDiff + (Math.abs(inputArray[j] - compareArray[j])));
       }
 
-      console.log('===================================================');
-      console.log('BEFORE Best match: ', bestMatch, '(scoreDiff: ', scoreDiff, ')');
-
       if (scoreDiff < bestScore) {
         bestScore = scoreDiff;
         bestMatch = compareArray[0];
@@ -102,7 +99,8 @@ module.exports = (app) => {
       }
     }
 
-    res.json(true);
+    // res.json(true);
+    res.status(bestMatch);
   });
 
   // ---------------------------------------------------------------------------
