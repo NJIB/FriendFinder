@@ -99,8 +99,7 @@ module.exports = (app) => {
       }
     }
 
-    // res.json(true);
-    res.status(bestMatch);
+    res.json(true);
   });
 
   // ---------------------------------------------------------------------------
